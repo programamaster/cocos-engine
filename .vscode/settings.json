@@ -31,7 +31,16 @@
         "xstring": "cpp",
         "tuple": "cpp",
         "vector": "cpp",
-        "istream": "c"
+        "istream": "c",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "memory": "cpp",
+        "cstring": "cpp",
+        "sstream": "cpp",
+        "algorithm": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "cstdlib": "cpp"
     },
     "cmake.configureOnOpen": false,
 }

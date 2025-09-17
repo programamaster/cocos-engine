@@ -27,6 +27,7 @@
 #include "ApplicationManager.h"
 #include "platform/interfaces/modules/ISystemWindowManager.h"
 #include "renderer/pipeline/GlobalDescriptorSetManager.h"
+#include "platform/FileUtils.h"
 
 #if CC_PLATFORM == CC_PLATFORM_ANDROID
     #include "platform/android/adpf_manager.h"
@@ -88,6 +89,11 @@ int BaseGame::init() {
     if (ret != 0) {
         return ret;
     }
+
+    auto *fs = FileUtils::getInstance();
+    auto paths = fs->getSearchPaths();
+    paths.insert(paths.begin(), fs->getWritablePath() + "download");
+    fs->setSearchPaths(paths);
 
     setXXTeaKey(_xxteaKey);
     runScript("jsb-adapter/web-adapter.js");
